@@ -1,0 +1,26 @@
+.circle-border {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  padding: 16px;
+}
+.about-me-section {
+  padding: 11em 6em 4em 6em;
+  color: white;
+  font-family: monospace;
+}
+.fstyle {
+  font-size: 26px;
+}
+.progress-bar {
+    height: 19px;
+    border-radius: 22px;
+    width: 100%;
+    background: #c9d3f2;
+}
+.progress-bar-inner {
+    background: var(--main-color);
+    height: 100%;
+    border-radius: 22px;
+}
