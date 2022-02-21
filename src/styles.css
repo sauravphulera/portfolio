@@ -9,10 +9,14 @@
 html,
 body {
   height: 100%;
+  font-family: monospace !important;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+}
+.teal-dark {
+  color: #2c644e;
 }
 /** flex classes*/
 .flex {
@@ -63,6 +67,12 @@ body {
 }
 .ml12 {
   margin-left: 12px;
+}
+.mt40 {
+  margin-top: 40px;
+}
+.mt60 {
+  margin-top: 60px;
 }
 /* end margins */
 
@@ -116,6 +126,9 @@ body {
 }
 .h100 {
     height: 100%;
+}
+.h50 {
+  height: 50%;
 }
 /* padding */
 .p16 {

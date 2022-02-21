@@ -1,0 +1,23 @@
+<div class="h100 w100 flex f-column a-center">
+  <div class="h50 bg flex-center-center f-column white-txt">
+    <div class="heading">Hi, I’m {{ name }}. Nice to meet you.</div>
+    <div class="mt20 w60">
+      {{ aboutMe }}
+    </div>
+  </div>
+  <div class="w80 about-down flex a-center f-column" [ngClass]="{'skew': this.animateCard}">
+      <div class="mt20">
+        <img src="https://mattfarley.ca/img/icons/frontend.svg" />
+      </div>
+      <div class="mainheading mt20 mb20">{{info.designation}}</div>
+      <div class="mt20" class="subheading teal-dark">Languages / Skills</div>
+      <div class="mt20 mb20">{{info.languages}}</div>
+      <div class="mt20 subheading teal-dark">Experience</div>
+      <div class="mt20 w30">
+          <div *ngFor="let ex of info.Experience" class="flex j-space-btw">
+              <div class="bold">{{ex.company}}</div>
+              <div>{{ex.time}}</div>
+              <!-- <div>{{ex.company}}</div> -->          </div>
+      </div>
+  </div>
+</div>

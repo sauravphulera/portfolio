@@ -1,0 +1,37 @@
+<div class="h100 w100 flex a-center f-column">
+  <div class="title p16 teal-dark flex-center-center mb20 mt60">
+    <div>Work Experience</div>
+  </div>
+  <div class="contain">
+    <div [ngClass]="{ drotate: this.startCardAnimation, dstill: !this.startCardAnimation}">
+      <div class="expText teal-dark">{{ experience.expText }}</div>
+    </div>
+    <div
+      *ngFor="let exp of this.experience.experiences; let i = index"
+      class="flex mt60"
+      [ngClass]="{
+        'left-animation': this.startCardAnimation && i % 2 == 0,
+        'right-animation': this.startCardAnimation && i % 2 != 0,
+        leftCard: i % 2 == 0,
+        rightCard: i % 2 != 0
+      }"
+    >
+      <div class="w70" *ngIf="i % 2 == 0">
+        <div class="card left bg white-txt">
+          {{ exp.summary }}
+        </div>
+      </div>
+      <div class="w30 p16 flex-center-center f-column">
+        <img [src]="exp.src" style="width: 80px; height: 100px" />
+        <div class="company-name">{{ exp.name }}</div>
+        <div class="teal-dark">{{ exp.desingation }}</div>
+        <div>{{ exp.time }}</div>
+      </div>
+      <div class="w70" *ngIf="i % 2 != 0">
+        <div class="card right bg white-txt">
+          {{ exp.summary }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

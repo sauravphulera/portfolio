@@ -4,19 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { HomeComponent } from './home/home.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent,
-    HomeComponent,
-    SidebarComponent
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +19,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,49 +1,9 @@
-<div class="root bg">
+<div class="root">
+  <app-toolbar></app-toolbar>
   <div
-    [ngClass]="{ expand: this.expandDiv, collapse: !this.expandDiv }"
-    class="root-div"
+    [@routeAnimations]="prepareRoute(outlet)"
+    style="height: calc(100% - 68px)"
   >
-    <div
-      class="background-image"
-      [ngClass]="{ expand: this.expandDiv, collapse: !this.expandDiv }"
-    ></div>
-    <div
-      class="white-txt greet-content flex-center-center"
-      [ngClass]="{ expand: this.expandDiv, collapse: !this.expandDiv }"
-    >
-      <div class="fsize">
-        <div>
-          <div>
-            Hello, I'm <span class="teal-txt">{{ this.name }}</span
-            >.
-          </div>
-          <div>I'm a Front-End Developer</div>
-        </div>
-        <div class="flex j-center mt10">
-          <button
-            mat-icon-button
-            class="d-arrow-btn"
-            (click)="this.expandDiv = !this.expandDiv"
-          >
-            <mat-icon class="down-arrow pointer teal-txt"
-              >keyboard_arrow_down</mat-icon
-            >
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container h100" *ngIf="!this.expandDiv">
-    <div style="height: 64px; width: 100%" class="pt20">
-      <app-toolbar></app-toolbar>
-    </div>
-    <div style="height: calc(100% - 74px)" class="bg flex">
-      <div class="w5">
-        <app-sidebar></app-sidebar>
-      </div>
-      <div class="w95 bg">
-        <app-home [info]="this.info"></app-home>
-      </div>
-    </div>
+    <router-outlet #outlet="outlet"></router-outlet>
   </div>
 </div>
