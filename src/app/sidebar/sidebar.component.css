@@ -1,0 +1,25 @@
+.icon-btn {
+    background: white;
+    width: fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    height: -moz-fit-content;
+}
+.circle {
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .m-sidebar-container {
+        align-items: baseline;
+        margin-top: 7em;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .circle {
+        border-radius: 50%;
+        width: 26px;
+        height: auto;
+    }
+}

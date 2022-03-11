@@ -1,24 +1,36 @@
-<div class="flex-center-center h100">
+<div class="flex-center-center h100 m-sidebar-container">
   <div>
     <div class="mb20">
-      <button mat-raised-button mat-icon-button>
-        <mat-icon>whatshot</mat-icon>
-      </button>
+      <img
+        src="assets/github.gif"
+        with="50"
+        height="50"
+        class="circle pointer"
+        (click)="openProfile('github')"
+      />
     </div>
     <div class="mb20">
-      <button mat-raised-button mat-icon-button>
-        <mat-icon>whatshot</mat-icon>
-      </button>
+      <img
+        src="assets/linkdin.gif"
+        with="50"
+        height="50"
+        class="circle pointer"
+        (click)="openProfile('linkedin')"
+      />
     </div>
     <div class="mb20">
+      <img
+        src="assets/insta.gif"
+        with="50"
+        height="50"
+        class="circle pointer"
+        (click)="openProfile('insta')"
+      />
+    </div>
+    <!-- <div class="mb20">
       <button mat-raised-button mat-icon-button>
         <mat-icon>whatshot</mat-icon>
       </button>
-    </div>
-    <div class="mb20">
-      <button mat-raised-button mat-icon-button>
-        <mat-icon>whatshot</mat-icon>
-      </button>
-    </div>
+    </div> -->
   </div>
 </div>

@@ -33,6 +33,9 @@ body {
 .a-center {
   align-items: center;
 }
+.a-baseline {
+  align-items: baseline;
+}
 .j-center {
   justify-content: center;
 }
@@ -119,24 +122,33 @@ body {
   width: 100%;
 }
 .w95 {
-    width:95%;
+  width: 95%;
 }
 .w5 {
-    width: 5%;
+  width: 5%;
 }
 .h100 {
-    height: 100%;
+  height: 100%;
 }
 .h50 {
   height: 50%;
+}
+.h40 {
+  height: 40%;
 }
 /* padding */
 .p16 {
   padding: 16px !important;
 }
 .pt20 {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 .bold {
   font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+  .mb20 {
+    margin-bottom: 20px !important;
+  }
 }

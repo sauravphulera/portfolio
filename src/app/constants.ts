@@ -1,6 +1,7 @@
 export const NAME = 'Saurav Phulera';
 export const info = {
-  aboutMe: `Since beginning my journey as a freelance designer nearly 10 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.`,
+  resume: 'https://docs.google.com/document/d/1Rg93DZ9f3UwOlW6AYXxd4WG19yP_HtQmSScQjatGE-8/edit?usp=sharing',
+  aboutMe: `I am a front end developer with 3 years of relevant work experience  including demonstrated experience in designing data visualization and analytical interfaces or applications.I have built all aspects of the user experience and user interface for client-facing landing pages. Specializes in using html, css , javascript Angular (all versions from js to 11) and some advanced  javascript libraries like D3.js,highcharts etc to build e-commerce sites.`,
   skills: [
     {
       name: 'Html',
@@ -12,7 +13,15 @@ export const info = {
     },
     {
       name: 'JS',
-      value: 100, //out of 100
+      value: 90, //out of 100
+    },
+    {
+      name: 'Angular',
+      value: 90, //out of 100
+    },
+    {
+      name: 'Jquery',
+      value: 80, //out of 100
     },
   ],
   designation: 'Front-end Developer',
@@ -32,10 +41,15 @@ export const info = {
       desingation: 'Sr. Front end Developer',
     },
   ],
+  profiles: {
+    linkedin: 'https://www.linkedin.com/in/sauravphulera/',
+    insta: 'https://www.instagram.com/phulera.sunny/',
+    github: 'https://github.com/sauravphulera'
+  }
 };
 export const Experience = {
   expText:
-    'I have 12 years commercial experience helping start-ups, small businesses, and agencies create successful websites.',
+    'I have 3 years of relevant work experience  including demonstrated experience in designing data visualization and analytical interfaces or applications.',
   experiences: [
     {
       name: 'Smart Joules Pvt. ltd.',
@@ -43,7 +57,7 @@ export const Experience = {
       desingation: 'Front end Developer',
       src: 'assets/logo_sm.svg',
       summary:
-        'Not only was Ian’s work on-time and to spec, he pays attention to improve the aesthetics of the site as well as the functionality. Throughout the entire process he is responsive, and willing to work through issues as they arise. It’s obvious he takes tremendous pride in his work, and I wouldn’t hesitate to recommend or work with him again.',
+        `I was responsible for creating a Diagnostic module from scratch which shows the system health in a birds eye view and later on features that shows ways to pinpoint the cause, While creating this I get to learn D3.js which is a very`
     },
     {
       name: 'Ziploan Pvt. ltd.',

@@ -8,6 +8,7 @@ import { HomeComponent } from '../home/home.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 const routes: Routes = [
   {
     path: '',
@@ -28,5 +29,6 @@ const routes: Routes = [
     MatIconModule,
     MatProgressBarModule,
   ],
+  providers: [CookieService],
 })
 export class LandingModule {}

@@ -1,21 +1,23 @@
-<div class="flex h100">
-  <div class="w50 flex j-center">
-    <div class="flex a-center f-column" style="margin-top: 11em">
+<div class="flex h100 mobile-container bg">
+  <div class="w50 flex j-center m-width">
+    <div class="flex a-center f-column mt m-mt">
       <div class="mb20">
-        <div class="circle-border"></div>
+        <div>
+          <img class="circle-border" src="/assets/profile.png" width="416" height="416"/>
+        </div>
       </div>
       <div class="mt20">
-        <button mat-stroked-button class="teal-txt teal-border">RESUME</button>
+        <button mat-stroked-button class="teal-txt teal-border" (click)="getResume()">RESUME</button>
       </div>
     </div>
   </div>
-  <div class="w50 about-me-section">
+  <div class="w50 about-me-section m-width">
     <div class="mb20 fstyle bold">About Me</div>
     <div class="mb20">{{ this.aboutMe }}</div>
     <div class="pt20 mb20 teal-txt bold fstyle">Skills</div>
-    <div class="mt40 flex" *ngFor="let skill of this.skills">
+    <div class="mt40 flex a-baseline" *ngFor="let skill of this.skills">
         <!-- name -->
-      <div class="w20">{{ skill.name }}</div>
+      <div class="w20 fsize">{{ skill.name }}</div>
       <!-- bar -->
       <div class="progress-bar w60">
         <div class="progress-bar-inner" [style.width]="skill.value + '%'"></div>
