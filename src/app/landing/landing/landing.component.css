@@ -75,6 +75,8 @@
         /* height: fit-content; */
     }
   }
-  @media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
-    /* .ipad-landscape { color: blue; } your css rules for ipad landscape */
+  @media all and (device-width: 320px) {
+    .msideBAr {
+        width: 12%;
+    } 
   }
