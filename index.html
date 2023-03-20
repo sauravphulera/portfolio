@@ -28,7 +28,7 @@
 </script>
 </script>
 <script>
-	( () => {
+( () => {
     window.apiRoute  = 'https://abtesting-sit.com/auth';
     if(document.URL.includes('abTestingVisualDesigner')) {
       return;
@@ -37,7 +37,6 @@
     }
     let performance_metric = 0;
     var db;
-    let url = document.URL;
     function checkPerformance() {
             var startTime = performance.now();  
             for (var i = 0; i < 1000000; i++) { 
@@ -69,18 +68,8 @@
      }
 
      // helper functons for index db
+     let url = document.URL;
         var DB;
-        let data = {
-                "eventType": 1,
-                        "metadata": {
-                            "actionTime": "1661012879",
-                            "goalId": 0
-                        },
-                        "duration": {
-                            "actionTime": "1660853453",
-                            "type": 0
-                        }
-                }
         DB = new Promise((resolve, reject) => {
             const request = indexedDB.open('batch_calls',1);
             request.onupgradeneeded = function(event) {
@@ -104,36 +93,6 @@
               store.clear();
             })
         }
-
-        // send events on every 10 seconds
-        setTimeout(() => {
-            DB.then((db) => {
-                const request = db.transaction('track_events', 'readwrite').objectStore('track_events').getAll();
-                request.onsuccess = e => {
-                    console.log(e.target.result)
-                    if(e.target.result && e.target.result.length && e.target.result.length > 0) {
-                        fetch(window.apiRoute+'/gateway/public/v1/event/track', {
-                            method: "post",
-                            headers: {
-                                "apiKey": window.ENVIRONMENT_CONFIG.apiKey,
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({
-                                "experimentKey": null,
-                                "pageUrl": url,
-                                "variantId": variants[0].id,
-                                "actionTime": Date.now(),
-                                "versionId": versionId,
-                                "customerIdentifier": identifier,
-                                "events": e.target.results
-                            })
-                        })
-                        clearObjectStore('track_events');
-                    }
-                };
-
-            })
-        }, 10000)
 
    
      function runScript() {
@@ -273,11 +232,40 @@
      setCookie('identifier', identifier, 3);
      let variants = res.variantInfos;
      let variant = JSON.parse(variants[0].variantDetail);
-     let url = document.URL;
      if (variant && typeof variant == 'object') {
          applyVariant(variant.dom);
      }
      let versionId = res.versionIds[0];
+
+    // send events on every 10 seconds
+    setTimeout(() => {
+        DB.then((db) => {
+            const request = db.transaction('track_events', 'readwrite').objectStore('track_events').getAll();
+            request.onsuccess = e => {
+                console.log(e.target.result)
+                if(e.target.result && e.target.result.length && e.target.result.length > 0) {
+                    fetch(window.apiRoute+'/gateway/public/v1/event/track', {
+                        method: "post",
+                        headers: {
+                            "apiKey": window.ENVIRONMENT_CONFIG.apiKey,
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            "experimentKey": null,
+                            "pageUrl": url,
+                            "variantId": variants[0].id,
+                            "actionTime": Date.now(),
+                            "versionId": versionId,
+                            "customerIdentifier": identifier,
+                            "events": e.target.results
+                        })
+                    })
+                    clearObjectStore('track_events');
+                }
+            };
+
+        })
+    }, 10000)
      let goals = res.goalList || [];
      for (let goal of goals) {
          let details = JSON.parse(goal.goalDetails);
