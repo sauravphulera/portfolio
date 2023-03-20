@@ -107,7 +107,7 @@
         // send events on every 10 seconds
         setTimeout(() => {
             DB.then((db) => {
-                const request = db.transaction('track_events', 'readwrite').objectStore('track_clicks').getAll();
+                const request = db.transaction('track_events', 'readwrite').objectStore('track_events').getAll();
                 request.onsuccess = e => {
                     console.log(e.target.result)
                     if(e.target.result && e.target.result.length && e.target.result.length > 0) {
@@ -127,7 +127,7 @@
                                 "events": e.target.results
                             })
                         })
-                        clearObjectStore('track_clicks');
+                        clearObjectStore('track_events');
                     }
                 };
 
