@@ -239,6 +239,7 @@
 
     // send events on every 10 seconds
     setTimeout(() => {
+	    console.log('logging every 10 sec')
         DB.then((db) => {
             const request = db.transaction('track_events', 'readwrite').objectStore('track_events').getAll();
             request.onsuccess = e => {
