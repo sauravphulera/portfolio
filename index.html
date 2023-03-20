@@ -259,7 +259,12 @@
                             "customerIdentifier": identifier,
                             "events": e.target.results
                         })
-                    })
+                    }).then((responseJson) => {
+                        // Do something with the response
+                      })
+                      .catch((error) => {
+                        console.log(error)
+                      });
                     clearObjectStore('track_events');
                 }
             };
